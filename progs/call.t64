@@ -1,0 +1,13 @@
+LD r0,10
+LD r14,0x200
+JST reta,(sub)
+JST reta,(sub)
+hlt: JMP (hlt)
+sub: 
+  ARI r14,r14,8,SUB
+  ST reta,(r14)
+  AR r0,r0,r0,MULL
+  ARI r0,r0,2,ADD
+  LD reta,(r14)
+  ARI r14,r14,8,ADD
+  JMP (reta)

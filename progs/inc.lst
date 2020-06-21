@@ -1,0 +1,14 @@
+0000: 00 10 00 3b 00 00 00 00 00 00 00 LDB r0,(count)
+000b: 00 10 00 3c 00 00 00 00 00 00 00 LDB r1,(incsize)
+0016: 08 70 00 03 loop: ARB r0,r0,r1,ADD,1
+001a: 04 10 00 3b 00 00 00 00 00 00 00 STB r0,(count)
+0025: 10 10 00 16 00 00 00 00 00 00 00 JNC (loop)
+0030: 0c 10 00 30 00 00 00 00 00 00 00 hlt: JMP (hlt)
+003b: 00 count: db 0
+003c: 01 incsize: db 1
+
+Symbol table:
+loop: 00000016
+hlt: 00000030
+count: 0000003b
+incsize: 0000003c

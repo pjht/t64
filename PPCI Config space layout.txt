@@ -1,0 +1,16 @@
+4 bytes vendor id at 0x0
+4 bytes vendor class id at 0x4
+4 bytes device id at 0x8
+1 byte class at 0xb
+1 byte subclass 0xf
+1 byte prog if 0x10 
+1 byte bar enable at 0x11
+8 byte BAR0 at 0x12
+8 byte BAR1 at 0x1A
+8 byte BAR2 at 0x22
+8 byte BAR3 at 0x2A
+8 byte BAR4 at 0x32
+8 byte BAR5 at 0x3A
+8 byte BAR6 at 0x42
+8 byte BAR7 at 0x4A
+173 bytes unused at 0x52 (free for use by devices)

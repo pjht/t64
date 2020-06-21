@@ -1,0 +1,16 @@
+LD r0, (rom_size) # - 11
+LD r1, (ram_size) # - 11
+AR r2,r0,r1,ADD #r2 contains first free address after ram - 4
+ST r2,8(pci_base) #set BAR0 of hdd to first free address - 15
+LDB r4,1 # - 4
+STB r4,7(pci_base) #enable hdd BAR0 - 15
+LDW r1,512 #r1 is index - 5
+loop: 
+ARW r1,r1,r4,SUB #Subtract 1 from the index - 4 (r4 set to 1 on line 5, saves memory for the 1 constant)
+LDB r3,r1(r2) #set r3 to byte from HDD - 3
+STB r3,r1(r0) #store HDD byte to RAM - 4
+JNZ (loop) #If index not 0, jump back - 11
+JMP (rom_size) #Jump to loaded code - 11
+rom_size: dqw 0
+ram_size: dqw 0
+pci_base: dqw 0

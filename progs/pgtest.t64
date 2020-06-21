@@ -1,0 +1,8 @@
+LD r1,jmp_ins
+ARI r1,r1,4,ADD,0
+LDB r0,(r1)
+ARIB r0,r0,16,MULUL,0
+ARIB r0,r0,1,ADD,0
+ARIB r0,r0,16,DIVUL,0
+STB r0,(r1)
+jmp_ins: JMP 0x0

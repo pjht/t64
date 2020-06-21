@@ -1,0 +1,24 @@
+0000: 03 10 00 62 00 00 00 00 00 00 00 LD r0, (rom_size) # - 11
+000b: 03 10 00 6a 00 00 00 00 00 00 00 LD r1, (ram_size) # - 11
+0016: 0b 70 00 03 AR r2,r0,r1,ADD #r2 contains first free address after ram - 4
+001a: 07 40 00 72 00 00 00 00 00 00 00 08 00 00 00 ST r2,8(pci_base) #set BAR0 of hdd to first free address - 15
+0029: 00 00 00 01 LDB r4,1 # - 4
+002d: 04 90 00 72 00 00 00 00 00 00 00 07 00 00 00 STB r4,7(pci_base) #enable hdd BAR0 - 15
+003c: #copy first sector of HDD to RAM start
+003c: #r0 is RAM address
+003c: 01 00 00 00 02 LDW r1,512 #r1 is index - 5
+0041: loop: 
+0041: 09 70 00 04 ARW r1,r1,r4,SUB #Subtract 1 from the index - 4 (r4 set to 1 on line 5, saves memory for the 1 constant)
+0045: 00 30 00 LDB r3,r1(r2) #set r3 to byte from HDD - 3
+0048: 00 04 20 00 STB r3,r1(r0) #store HDD byte to RAM - 4
+004c: 00 0e 10 00 41 00 00 00 00 00 00 JNZ (loop) #If index not 0, jump back - 11
+0057: 00 0c 10 00 62 00 00 00 00 00 00 JMP (rom_size) #Jump to loaded code - 11
+0062: 00 00 00 00 00 00 00 00 rom_size: dqw 0
+006a: 00 00 00 00 00 00 00 00 ram_size: dqw 0
+0072: 00 00 00 00 00 00 00 00 pci_base: dqw 0
+
+Symbol table:
+loop: 00000041
+rom_size: 00000062
+ram_size: 0000006a
+pci_base: 00000072

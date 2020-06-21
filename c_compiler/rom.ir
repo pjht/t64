@@ -1,0 +1,261 @@
+---
+- :name: main
+  :code:
+  - - 
+    - rom_size
+    - type_extern
+    - 64
+  - - 
+    - ram_size
+    - type_extern
+    - 64
+  - - 
+    - pci_base
+    - type_extern
+    - 64
+  - - 
+    - rom_sz_val
+    - extern
+    - 64
+  - - exprc_temp
+    - rom_size
+    - "="
+  - - rom_sz_val
+    - exprc_temp
+    - "*"
+  - - 
+    - 
+    - expr_temp_done
+  - - 
+    - ram_sz_val
+    - extern
+    - 64
+  - - exprc_temp
+    - ram_size
+    - "="
+  - - ram_sz_val
+    - exprc_temp
+    - "*"
+  - - 
+    - 
+    - expr_temp_done
+  - - 
+    - hdd_start
+    - extern
+    - 64
+  - - - hdd_start
+      - rom_sz_val
+      - "="
+    - - - exprc_temp
+        - ram_sz_val
+        - "="
+    - - hdd_start
+      - hdd_start
+      - "+"
+      - exprc_temp
+  - - 
+    - 
+    - expr_temp_done
+  - - 
+    - len_mask
+    - extern
+    - 64
+  - - exprc_temp1
+    - pci_base
+    - "="
+  - - exprc_temp2
+    - 18
+    - 
+  - - len_mask
+    - exprc_temp1
+    - "[]"
+    - exprc_temp2
+  - - 
+    - 
+    - expr_temp_done
+  - - - - hdd_start
+        - hdd_start
+        - "="
+      - - - exprc_temp
+          - len_mask
+          - "="
+        - - exprc_temp
+          - exprc_temp
+          - "~"
+      - - hdd_start
+        - hdd_start
+        - "|"
+        - exprc_temp
+    - - - exprc_temp
+        - 1
+        - 
+    - - hdd_start
+      - hdd_start
+      - "+"
+      - exprc_temp
+  - - 
+    - 
+    - expr_temp_done
+  - - c_temp1
+    - pci_base
+    - "="
+  - - c_temp2
+    - 18
+    - 
+  - - c_temp3
+    - hdd_start
+    - "="
+  - - c_temp1
+    - c_temp2
+    - "[]="
+    - c_temp3
+  - - 
+    - 
+    - temp_done
+  - - c_temp1
+    - pci_base
+    - "="
+  - - c_temp2
+    - 17
+    - 
+  - - c_temp3
+    - 1
+    - 
+  - - c_temp1
+    - c_temp2
+    - "[]="
+    - c_temp3
+  - - 
+    - 
+    - temp_done
+  - - 
+    - testing
+    - extern
+    - 32
+  - - - - testing
+        - 1
+        - 
+      - - - exprc_temp
+          - 3
+          - 
+      - - testing
+        - testing
+        - "+"
+        - exprc_temp
+    - - - exprc_temp
+        - 2
+        - 
+    - - testing
+      - testing
+      - "-"
+      - exprc_temp
+  - - 
+    - 
+    - expr_temp_done
+  - - 
+    - 
+    - start_scope
+  - - 
+    - idx
+    - extern
+    - 16
+  - - idx
+    - 512
+    - 
+  - - 
+    - label0
+    - ":"
+  - - - c_temp1
+      - idx
+      - "="
+    - - - exprc_temp
+        - 0
+        - 
+    - - c_temp1
+      - c_temp1
+      - ">"
+      - exprc_temp
+  - - 
+    - 
+    - expr_temp_done
+  - - 
+    - c_temp1
+    - ifnot
+    - label1
+  - - 
+    - byte_tmp
+    - extern
+    - 8
+  - - byte_tmp
+    - byte_tmp
+    - "^"
+    - byte_tmp
+  - - 
+    - 
+    - temp_done
+  - - - idx
+      - idx
+      - "="
+    - - - exprc_temp
+        - 1
+        - 
+    - - idx
+      - idx
+      - "-"
+      - exprc_temp
+  - - 
+    - 
+    - expr_temp_done
+  - - exprc_temp1
+    - hdd_start
+    - "="
+  - - exprc_temp2
+    - idx
+    - "="
+  - - byte_tmp
+    - exprc_temp1
+    - "[]"
+    - exprc_temp2
+  - - 
+    - 
+    - expr_temp_done
+  - - c_temp1
+    - rom_sz_val
+    - "="
+  - - c_temp2
+    - idx
+    - "="
+  - - c_temp3
+    - byte_tmp
+    - "="
+  - - c_temp1
+    - c_temp2
+    - "[]="
+    - c_temp3
+  - - 
+    - 
+    - temp_done
+  - - 
+    - label0
+    - goto
+  - - 
+    - label1
+    - ":"
+  - - 
+    - 
+    - end_scope
+  - - exprc_temp
+    - rom_sz_val
+    - "="
+  - - c_temp1
+    - exprc_temp
+    - "*"
+  - - 
+    - 
+    - expr_temp_done
+  - - 
+    - c_temp1
+    - "*()"
+  - - 
+    - 
+    - temp_done

@@ -1,0 +1,6 @@
+LDB r0,(count)
+ARIB r0,r0,1,ADD,0
+STB r0,(count)
+JNZ 0
+HLT
+count: dqw 0

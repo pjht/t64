@@ -1,0 +1,92 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sat Jun 13 15:19:31 2020
+[*]
+[dumpfile] "/Users/peterterpstra/Desktop/projects/t64/verilog/dumps/t64.lxt"
+[dumpfile_mtime] "Sat Jun 13 14:40:05 2020"
+[dumpfile_size] 1604706
+[savefile] "/Users/peterterpstra/Desktop/projects/t64/verilog/t64.gtkw"
+[timestart] 0
+[size] 1440 811
+[pos] -106 -1
+*-0.995732 13 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t64_system.
+[treeopen] t64_system.CPU.
+[sst_width] 193
+[signals_width] 167
+[sst_expanded] 1
+[sst_vpaned_height] 241
+@200
+-Memory bus:
+@22
+t64_system.addr[63:0]
+t64_system.dbus[63:0]
+@2028
+^5 /Users/peterterpstra/Desktop/projects/t64/verilog/widthtrans.txt
+t64_system.width[1:0]
+@200
+-Control signals:
+@28
+t64_system.write
+t64_system.clk
+t64_system.reset
+@200
+-CPU state:
+@22
+t64_system.CPU.pc[63:0]
+t64_system.insword[127:0]
+@2028
+^4 /Users/peterterpstra/Desktop/projects/t64/verilog/phasetrans.txt
+t64_system.CPU.phase[1:0]
+@28
+t64_system.CPU.zero
+@22
+t64_system.CPU.rf.rf.\regs[0][63:0]
+@200
+-Decode signals:
+@2028
+^5 /Users/peterterpstra/Desktop/projects/t64/verilog/widthtrans.txt
+t64_system.CPU.cntrl.opwidth[1:0]
+@c02022
+^3 /Users/peterterpstra/Desktop/projects/t64/verilog/opcodetrans.txt
+t64_system.CPU.cntrl.opcode[7:0]
+@28
+(0)t64_system.CPU.cntrl.opcode[7:0]
+(1)t64_system.CPU.cntrl.opcode[7:0]
+(2)t64_system.CPU.cntrl.opcode[7:0]
+(3)t64_system.CPU.cntrl.opcode[7:0]
+(4)t64_system.CPU.cntrl.opcode[7:0]
+(5)t64_system.CPU.cntrl.opcode[7:0]
+(6)t64_system.CPU.cntrl.opcode[7:0]
+(7)t64_system.CPU.cntrl.opcode[7:0]
+@1401200
+-group_end
+@2022
+^1 /Users/peterterpstra/Desktop/projects/t64/verilog/addrtrans.txt
+t64_system.CPU.cntrl.addrmode[3:0]
+@22
+t64_system.CPU.cntrl.rdasel[3:0]
+t64_system.CPU.cntrl.rdbsel[3:0]
+t64_system.CPU.cntrl.wrsel[3:0]
+@2022
+^2 /Users/peterterpstra/Desktop/projects/t64/verilog/aluoptrans.txt
+t64_system.CPU.cntrl.aluop[7:0]
+@22
+t64_system.CPU.cntrl.imm[63:0]
+@28
+t64_system.CPU.cntrl.immload
+t64_system.CPU.cntrl.aluload
+@29
+t64_system.CPU.cntrl.pcload
+@28
+t64_system.CPU.cntrl.memaddr
+t64_system.CPU.cntrl.pointer
+t64_system.CPU.cntrl.regwrop
+t64_system.CPU.cntrl.memwrop
+t64_system.CPU.cntrl.jumpop
+@200
+-Memory:
+@22
+t64_system.RAM.\ram[10][63:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,8 @@
+LDB r0,(count)
+LDB r1,(incsize)
+loop: ARB r0,r0,r1,ADD,1
+STB r0,(count)
+JNC (loop)
+hlt: JMP (hlt)
+count: db 0
+incsize: db 1
